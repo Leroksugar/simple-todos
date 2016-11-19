@@ -6,8 +6,10 @@ import './task.js';
 import './body.html';
  
 Template.body.helpers({
+  tasks() {
     // Show newest tasks at the top
     return Tasks.find({}, { sort: { createdAt: -1 } });
+  },
 });
  
 Template.body.events({
